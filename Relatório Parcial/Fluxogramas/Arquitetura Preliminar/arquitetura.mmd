@@ -1,0 +1,29 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryTextColor": "#000000",
+    "lineColor": "#4b5563",
+    "fontFamily": "Arial"
+  }
+}}%%
+
+flowchart TD
+    A[Usuário] --> B[Navegador]
+    B --> C[Interface Web<br/>HTML + CSS + JavaScript]
+    C --> D[Aplicação Web / Framework<br/>Regras de negócio]
+    D --> E[(Banco de Dados)]
+    D --> F[API Externa de Livros]
+    D --> G[Serviço em Nuvem]
+
+    H[Git / Repositório] -. Controle de versão .-> D
+
+    classDef interface fill:#eef4ff,stroke:#3b82f6,color:#111827;
+    classDef app fill:#f8fafc,stroke:#64748b,color:#111827;
+    classDef data fill:#f3f4f6,stroke:#6b7280,color:#111827;
+    classDef support fill:#ffffff,stroke:#9ca3af,color:#111827;
+
+    class B,C interface;
+    class D app;
+    class E data;
+    class F,G,H support;

@@ -1,0 +1,49 @@
+Table USUARIO {
+  id_usuario int [pk, increment]
+  nome varchar(150) [not null]
+  matricula varchar(50) [not null, unique]
+  turma varchar(50)
+  tipo_usuario varchar(30) [not null]
+
+  Note: 'Representa alunos, professores ou servidores vinculados às operações da biblioteca.'
+}
+
+Table LIVRO {
+  id_livro int [pk, increment]
+  titulo varchar(200) [not null]
+  autor varchar(150) [not null]
+  editora varchar(150)
+  ano int
+  isbn varchar(20)
+  categoria varchar(100)
+  status_livro varchar(30) [not null]
+
+  Note: 'Representa cada exemplar físico pertencente ao acervo da biblioteca.'
+}
+
+Table EMPRESTIMO {
+  id_emprestimo int [pk, increment]
+  id_usuario int [not null]
+  id_livro int [not null]
+  data_saida date [not null]
+  data_prevista_devolucao date [not null]
+  data_devolucao_real date
+  status_emprestimo varchar(30) [not null]
+
+  Note: 'Registra as operações de empréstimo e devolução dos exemplares.'
+}
+
+Table ACESSO_SISTEMA {
+  id_acesso int [pk, increment]
+  nome_usuario varchar(150) [not null]
+  login varchar(100) [not null, unique]
+  senha_hash varchar(255) [not null]
+  perfil_acesso varchar(30) [not null]
+  ativo boolean [not null, default: true]
+  ultimo_acesso datetime
+
+  Note: 'Representa as credenciais de pessoas autorizadas a acessar e operar o sistema.'
+}
+
+Ref: EMPRESTIMO.id_usuario > USUARIO.id_usuario
+Ref: EMPRESTIMO.id_livro > LIVRO.id_livro

@@ -1,0 +1,30 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryTextColor": "#000000",
+    "lineColor": "#4b5563",
+    "fontFamily": "Arial"
+  }
+}}%%
+
+flowchart TD
+    A[Acesso ao sistema] --> B[Consulta ao acervo]
+    B --> C{Livro disponível?}
+
+    C -- Sim --> D[Identificação do usuário]
+    D --> E[Seleção do exemplar]
+    E --> F[Registro do empréstimo]
+    F --> G[Acompanhamento do prazo]
+    G --> H[Registro da devolução]
+    H --> I[Exemplar disponível novamente]
+
+    C -- Não --> J[Realizar nova consulta ao acervo]
+
+    classDef etapa fill:#eef4ff,stroke:#3b82f6,color:#111827;
+    classDef decisao fill:#fff7ed,stroke:#f59e0b,color:#111827;
+    classDef retorno fill:#f8fafc,stroke:#64748b,color:#111827;
+
+    class A,B,D,E,F,G,H,I etapa;
+    class C decisao;
+    class J retorno;

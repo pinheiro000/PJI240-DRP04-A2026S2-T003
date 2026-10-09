@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-slate-50" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sistema de Gestão da Biblioteca Escolar - Acesso</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Typography styles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+  </style>
+<!-- Layout refinement styles -->
+<style data-purpose="layout-refinements">
+    .academic-bg-pattern {
+      background-color: #f8fafc;
+      background-image: radial-gradient(#e2e8f0 0.85px, transparent 0.85px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="academic-bg-pattern h-full text-slate-800 antialiased flex flex-col justify-between min-h-screen">
+<!-- BEGIN: MainHeader (Placeholder for screen reader hierarchy) -->
+<header class="sr-only">
+<h1>Portal de Autenticação - Sistema de Gestão da Biblioteca Escolar</h1>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: MainContent -->
+<main class="flex-grow flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+<!-- Central Login Container -->
+<div class="w-full max-w-md" data-purpose="login-wrapper">
+<!-- Card Container -->
+<section class="bg-white rounded-lg border border-slate-200 shadow-sm p-8 sm:p-10 transition-shadow duration-200 hover:shadow-md" data-purpose="login-card">
+<!-- BEGIN: InstitutionalHeaderSection -->
+<div class="text-center mb-8">
+<!-- Library Logo/Badge -->
+<div class="flex justify-center mb-5" data-purpose="logo-container">
+<img alt="Logotipo da Biblioteca Escolar" class="w-14 h-14 object-contain rounded-md shadow-xs" height="56" src="https://lh3.googleusercontent.com/aida/AEtjO1Xm7c00Nto6_sKEOKRoMpeJNl9rRIr0e_icKFtcF5s5nsl9VyL3rGLdfFf4bIELt6Uv7URSzKg0KBMyHUeIW9ZbDNdMBerNptoG-pGIkl6No5q-XcukeONaU4vwoylkzhIjNjWOg1IbtRq2Svp9VGZDm78rGDN-YD15w_df2gpve2IQgd2dP4UJLzl7neiem5MxCGRUq8GQGeXbsCI8DDm_NrR39Xz1fozuDa26ZZ-X6WRZ2FizytFSZXU" width="56"/>
+</div>
+<!-- Upper Institutional Entity -->
+<p class="text-xs uppercase tracking-wider font-semibold text-slate-500 mb-2">
+            Instituição Escolar
+          </p>
+<!-- System Title -->
+<h1 class="text-xl font-bold text-slate-900 tracking-tight leading-snug sm:text-2xl">
+            Sistema de Gestão da Biblioteca Escolar
+          </h1>
+<!-- System Subtitle -->
+<p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
+            Controle e organização de acervo, empréstimos e usuários da instituição escolar
+          </p>
+</div>
+<!-- END: InstitutionalHeaderSection -->
+<!-- BEGIN: LoginForm -->
+<form action="#" class="space-y-5" data-purpose="auth-form" method="POST" onsubmit="event.preventDefault();">
+<!-- Field 1: Identifier/Enrollment -->
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-1.5" for="identifier">
+              Usuário ou matrícula
+            </label>
+<div class="relative rounded-md shadow-none">
+<!-- Leading Icon: User/ID -->
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+<svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input autocomplete="username" class="block w-full rounded-md border-slate-300 pl-10 pr-3.5 py-2.5 text-slate-900 text-sm placeholder-slate-400 focus:border-primary-600 focus:ring-1 focus:ring-primary-600 bg-white" id="identifier" name="identifier" placeholder="Digite seu usuário ou número de matrícula" required="" type="text"/>
+</div>
+</div>
+<!-- Field 2: Password -->
+<div>
+<label class="block text-sm font-medium text-slate-700 mb-1.5" for="password">
+              Senha
+            </label>
+<div class="relative rounded-md shadow-none">
+<!-- Leading Icon: Lock/Key -->
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+<svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input autocomplete="current-password" class="block w-full rounded-md border-slate-300 pl-10 pr-3.5 py-2.5 text-slate-900 text-sm placeholder-slate-400 focus:border-primary-600 focus:ring-1 focus:ring-primary-600 bg-white" id="password" name="password" placeholder="Digite sua senha de acesso" required="" type="password"/>
+</div>
+</div>
+<!-- Option: Remember Session -->
+<div class="flex items-center pt-0.5">
+<input class="h-4 w-4 rounded border-slate-300 text-primary-600 focus:ring-primary-600 focus:ring-offset-0" id="remember_me" name="remember_me" type="checkbox"/>
+<label class="ml-2 block text-sm text-slate-600 select-none cursor-pointer" for="remember_me">
+              Manter conectado
+            </label>
+</div>
+<!-- Submit Action Button -->
+<div class="pt-2">
+<button class="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-md text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 active:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600 shadow-sm transition-colors duration-150 cursor-pointer" type="submit">
+              Entrar no sistema
+            </button>
+</div>
+</form>
+<!-- END: LoginForm -->
+<!-- BEGIN: InstitutionalCardNotice -->
+<div class="mt-8 pt-6 border-t border-slate-100 text-center" data-purpose="security-notice">
+<p class="text-xs text-slate-500 leading-normal">
+            Acesso restrito e destinado exclusivamente a usuários e servidores autorizados da biblioteca escolar.
+          </p>
+</div>
+<!-- END: InstitutionalCardNotice -->
+</section>
+</div>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: PageFooter -->
+<footer class="py-6 text-center text-xs text-slate-500 border-t border-slate-200/70" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-4">
+<p class="tracking-wide">
+        Instituição Escolar • Biblioteca Escolar • Acesso ao Sistema
+      </p>
+</div>
+</footer>
+<!-- END: PageFooter -->
+</body></html>
