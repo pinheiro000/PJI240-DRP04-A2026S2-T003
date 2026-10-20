@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: biblioteca-escolar
+    runtime: node
+    plan: free
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm run db:setup && npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DEMO_LOGIN
+        value: operador@biblioteca.local
+      - key: DEMO_PASSWORD
+        sync: false

@@ -1,0 +1,21 @@
+{
+  "name": "biblioteca-escolar",
+  "private": true,
+  "workspaces": [
+    "api",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -k \"npm run dev --workspace @biblioteca/api\" \"npm run dev --workspace @biblioteca/web\"",
+    "build": "npm run build --workspace @biblioteca/web",
+    "test": "npm run test --workspace @biblioteca/api",
+    "db:setup": "npm run db:setup --workspace @biblioteca/api",
+    "start": "node api/src/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
