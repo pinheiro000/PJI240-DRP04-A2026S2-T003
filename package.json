@@ -10,6 +10,7 @@
     "build": "npm run build --workspace @biblioteca/web",
     "test": "npm run test --workspace @biblioteca/api",
     "db:setup": "npm run db:setup --workspace @biblioteca/api",
+    "db:setup:schema": "npm run db:setup:schema --workspace @biblioteca/api",
     "start": "node api/src/index.js"
   },
   "engines": {
